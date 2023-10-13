@@ -3,10 +3,10 @@
     secret::String
 end
 
-string(fixer::Fixer) = "SOURCE(Fixer): $(fixer.base_url)"
+Base.string(fixer::Fixer) = "SOURCE(Fixer): $(fixer.base_url)"
 
 
-function available(fixer::Fixer)
+function views(fixer::Fixer)
     currency_options = (
         option("base", "USD", "Base Currency to compare against"),
         option("symbols", AbstractArray{String})
@@ -38,8 +38,7 @@ function available(fixer::Fixer)
     ]
 end
 
-@unimplemented Fixer "Convert" "Timeseries" "Fluctuations"
-
+# UNIMPLENTED "Convert" "Timeseries" "Fluctuations"
 
 function gander(fixer::Fixer, view::View{Fixer})
     endpoint = 
@@ -50,7 +49,7 @@ function gander(fixer::Fixer, view::View{Fixer})
         elseif view.title == "Historical"
             view.options[:date] |> string ∘ choose
         else
-            UNIMPLEMENTED |> throw ∘ UnavailableReason
+            Uniformity.UNIMPLEMENTED |> throw ∘ Uniformity.UnavailableReason
         end
     url = joinpath(URI(fixer.base_url), endpoint)     
     params = Dict{String, Any}("access_key" => fixer.secret)

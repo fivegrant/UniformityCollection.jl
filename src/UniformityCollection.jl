@@ -1,3 +1,5 @@
+module UniformityCollection
+
 using Uniformity
 import HTTP
 import Dates: Date
@@ -8,3 +10,5 @@ import CSV
 
 include("./fixer.jl")
 include("./memphisdatahub.jl")
+
+end

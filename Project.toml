@@ -1,5 +1,5 @@
 name = "UniformityCollection"
-uuid = "4481f8c9-df71-4214-9c57-bad0163a9207"
+uuid = "21f8ff4f-2f08-454b-a88e-f8fb8973403e"
 authors = ["Five Grant <5@fivegrant.com>"]
 version = "0.1.0"
 
@@ -9,6 +9,5 @@ DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
-TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 URIs = "5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4"
 Uniformity = "93e9bc16-45db-4b33-8826-cfe471273028"
