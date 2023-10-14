@@ -11,4 +11,6 @@ import CSV
 include("./fixer.jl")
 include("./memphisdatahub.jl")
 
+export Fixer, MemphisDataHub
+
 end
