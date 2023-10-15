@@ -6,7 +6,7 @@ end
 Base.string(fixer::Fixer) = "SOURCE(Fixer): $(fixer.base_url)"
 
 
-function views(fixer::Fixer)
+function Uniformity.views(fixer::Fixer)
     currency_options = (
         option("base", "USD", "Base Currency to compare against"),
         option("symbols", AbstractArray{String})
@@ -40,7 +40,7 @@ end
 
 # UNIMPLENTED "Convert" "Timeseries" "Fluctuations"
 
-function gander(fixer::Fixer, view::View{Fixer})
+function Uniformity.gander(fixer::Fixer, view::View{Fixer})
     endpoint = 
         if view.title == "Latest"
             "latest"

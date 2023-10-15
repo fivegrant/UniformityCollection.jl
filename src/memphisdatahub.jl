@@ -4,8 +4,8 @@ struct MemphisDataHub <: Source end
 
 Base.string(::MemphisDataHub) = "SOURCE(MemphisDataHub)"
 
-views(::Type{MemphisDataHub}) = views(MemphisDataHub())
-function views(::MemphisDataHub)
+Uniformity.views(::Type{MemphisDataHub}) = views(MemphisDataHub())
+function Uniformity.views(::MemphisDataHub)
     [
         View{MemphisDataHub, DataFrame}(
             title = "Memphis Data Sources",
@@ -17,7 +17,7 @@ function views(::MemphisDataHub)
     ]
 end
 
-function gander(::MemphisDataHub, view::View{MemphisDataHub, DataFrame})
+function Uniformity.gander(::MemphisDataHub, view::View{MemphisDataHub, DataFrame})
     url = joinpath(URI(MEMPHIS_URL), "resource", choose(view.options[:id]) * ".csv")     
     response = HTTP.get(url)
     CSV.read(response.body, DataFrame)

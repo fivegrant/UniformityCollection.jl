@@ -1,7 +1,7 @@
 name = "UniformityCollection"
 uuid = "21f8ff4f-2f08-454b-a88e-f8fb8973403e"
 authors = ["Five Grant <5@fivegrant.com>"]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
